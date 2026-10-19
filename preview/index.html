@@ -444,6 +444,83 @@ footer .fby{margin-top:2.6rem;padding-top:1.4rem;border-top:1px solid var(--line
 .js-motion .reveal-h{will-change:filter,transform}
 @media (max-width:900px){.nums-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.nums-grid .num:last-child{grid-column:1/-1}}
 @media (max-width:760px){.majlis svg.links{display:none}}
+/* ===== exhibition plan ===== */
+[hidden]{display:none!important}
+.planner{background:var(--stone-lit)}
+.plan-head{display:flex;justify-content:space-between;align-items:end;gap:1.6rem;flex-wrap:wrap}
+.plan-head .lede{max-width:52ch}
+.plan-ctrl{display:flex;gap:.6rem;flex-wrap:wrap}
+.pbtn{font-family:var(--f-ui);font-size:.88rem;padding:.65rem 1.15rem;border-radius:999px;border:1px solid rgba(36,22,14,.25);background:transparent;color:var(--ink);cursor:pointer;transition:background .25s,color .25s,border-color .25s}
+.pbtn:hover{border-color:var(--teak)}
+.pbtn.primary{background:var(--teak);color:var(--foam);border-color:var(--teak)}
+.pbtn.primary:hover{background:var(--hull);border-color:var(--hull)}
+.pbtn[aria-pressed="true"]{background:var(--saffron);color:var(--teak);border-color:var(--saffron)}
+.plan-grid{display:grid;grid-template-columns:minmax(0,1.65fr) minmax(0,1fr);gap:clamp(18px,3vw,36px);margin-top:clamp(28px,4vw,48px);align-items:start}
+.plan-map{background:var(--teak);border-radius:6px;padding:clamp(8px,1.4vw,16px);box-shadow:0 30px 60px -36px rgba(43,25,16,.6);overflow:hidden}
+.plan-map svg{display:block;width:100%;height:auto;touch-action:manipulation}
+.room rect{fill:var(--stone-lit);stroke:#2B1910;stroke-width:2;transition:fill .35s}
+.room.court rect{stroke:#2B1910}
+.room{cursor:pointer;outline:none}
+.room .num{fill:var(--teak);transition:fill .3s}
+.room .nt{fill:var(--saffron);font-family:var(--f-ui);font-size:17px;font-weight:500;text-anchor:middle;pointer-events:none}
+.room .rt{fill:var(--teak);font-family:var(--f-kufi);font-weight:600;font-size:21px;text-anchor:middle;pointer-events:none}
+.room:hover rect,.room:focus-visible rect{fill:#F7EBD0}
+.room.court:hover rect,.room.court:focus-visible rect{fill:url(#tiles);stroke:var(--hull);stroke-width:3}
+.room.sel rect{fill:var(--saffron)}
+.room.court.sel rect{fill:url(#tiles);stroke:var(--saffron);stroke-width:5}
+.room.sel .num{fill:var(--hull)}
+.room.sel .nt{fill:var(--foam)}
+.room:focus-visible rect{stroke:var(--hull);stroke-width:4}
+.room.dim{opacity:.55}
+.seats-arc{fill:none;stroke:#9A7B4C;stroke-width:5;stroke-dasharray:3 6;stroke-linecap:round}
+.entry rect{fill:#B99B6B;stroke:#2B1910;stroke-width:2}
+.entry .et,.entry .es{fill:var(--teak);font-family:var(--f-kufi);font-size:17px;font-weight:500;text-anchor:middle}
+.gate-arch{fill:none;stroke:var(--hull);stroke-width:4}
+.barjeel rect{fill:#E8D6B2;stroke:#2B1910;stroke-width:1.5}
+.barjeel path{stroke:#2B1910;stroke-width:1}
+.sea-t{fill:var(--foam);font-family:var(--f-kufi);font-size:18px;text-anchor:middle}
+.legend-t{fill:#5A4330;font-family:var(--f-ui);font-size:14px}
+.tour-path{fill:none;stroke:var(--hull);stroke-width:3;stroke-dasharray:2 10;stroke-linecap:round;pointer-events:none;opacity:.75}
+.walker{pointer-events:none}
+.w-dot{fill:var(--hull);stroke:var(--foam);stroke-width:3}
+.w-halo{fill:rgba(154,60,31,.25)}
+.plan-panel{background:var(--teak);color:var(--foam);border-radius:6px;padding:clamp(20px,2.6vw,32px);min-height:100%;position:sticky;top:84px}
+.pp-empty{display:grid;gap:.8rem;justify-items:start}
+.pp-empty p{color:var(--on-dark-soft);font-size:.95rem;line-height:1.85}
+.pp-ico{width:46px;height:46px;border-radius:23px 23px 4px 4px;background:var(--hull);display:grid;place-items:center;color:var(--foam)}
+.pp-ico svg{width:24px;height:24px}
+.pp-no{font-family:var(--f-ui);font-size:.8rem;color:var(--saffron)}
+.pp-title{font-family:var(--f-kufi);font-weight:600;font-size:clamp(1.4rem,2.2vw,1.9rem);line-height:1.35;margin-top:.2rem}
+.pp-desc{color:var(--on-dark-soft);font-size:.95rem;line-height:1.85;margin-top:.5rem}
+.plan-panel h4{margin:1.3rem 0 .5rem;font-family:var(--f-ui);font-weight:500;font-size:.8rem;color:var(--saffron)}
+.pp-chips{display:flex;flex-wrap:wrap;gap:.4rem}
+.pp-chips span{font-family:var(--f-ui);font-size:.82rem;padding:.32rem .8rem;border:1px solid var(--line-dark);border-radius:999px}
+.pp-meet{font-family:var(--f-kufi);font-size:1.02rem;line-height:1.6}
+.pp-people{margin:0;padding:0;display:grid;gap:.35rem}
+.pp-people li{list-style:none;display:flex;gap:.6rem;align-items:center;font-size:.95rem}
+.pp-people li b{width:26px;height:30px;flex:none;border-radius:13px 13px 3px 3px;background:var(--teak-2);border:1px solid rgba(227,163,59,.5);display:grid;place-items:center;font-family:var(--f-ruqaa);font-weight:400;font-size:.95rem;color:var(--foam)}
+.pp-people li.none{color:var(--on-dark-soft);font-size:.9rem}
+.pp-nav{display:flex;gap:.5rem;margin-top:1.6rem;flex-wrap:wrap}
+.pp-nav .pbtn{color:var(--foam);border-color:var(--line-dark)}
+.pp-nav .pbtn:hover{border-color:var(--saffron);color:var(--saffron)}
+.room-chips{display:flex;flex-wrap:wrap;gap:.45rem;margin-top:1.4rem}
+.room-chips button{font-family:var(--f-ui);font-size:.82rem;padding:.42rem .9rem;border-radius:999px;border:1px solid rgba(36,22,14,.22);background:transparent;color:var(--ink);cursor:pointer}
+.room-chips button b{font-weight:500;color:var(--hull);margin-inline-end:.35rem}
+.room-chips button[aria-pressed="true"]{background:var(--teak);color:var(--foam);border-color:var(--teak)}
+.room-chips button[aria-pressed="true"] b{color:var(--saffron)}
+.plan-note{margin-top:1rem;font-family:var(--f-ui);font-size:.82rem;color:var(--ink-soft);max-width:70ch}
+.vfig-one{position:sticky}
+.letter-box{max-width:860px;margin:2.4rem auto 0}
+.letter-box summary{cursor:pointer;list-style:none;text-align:center;font-family:var(--f-ui);font-size:.95rem;font-weight:500;padding:.85rem 1.4rem;border-radius:999px;background:var(--teak);color:var(--foam);width:max-content;max-width:100%;margin-inline:auto}
+.letter-box summary::-webkit-details-marker{display:none}
+.letter-box[open] summary{background:var(--hull)}
+.letter-box .letter{margin-top:1.6rem}
+@media (max-width:900px){
+  .plan-grid{grid-template-columns:minmax(0,1fr)}
+  .plan-panel{position:static}
+  .room .rt{font-size:24px}
+}
+
 </style>
 
 </head>
@@ -456,10 +533,10 @@ footer .fby{margin-top:2.6rem;padding-top:1.4rem;border-top:1px solid var(--line
     <a class="bar-mark" href="#top">مركز النعيم</a>
     <nav aria-label="فصول الدراسة">
       <a href="#vision">رؤية المعد</a>
-      <a href="#method">المنهجية</a>
+      <a href="#method">المراحل</a>
+      <a href="#plan">المعرض</a>
       <a href="#majlis">اللقاء التأسيسي</a>
-      <a href="#gateway">بوابة المنامة</a>
-      <a href="#closing">الخاتمة</a>
+            <a href="#closing">الخاتمة</a>
       <a href="#invite">الدعوة</a>
     </nav>
   </div>
@@ -494,102 +571,23 @@ footer .fby{margin-top:2.6rem;padding-top:1.4rem;border-top:1px solid var(--line
 
     <div class="vision-grid">
       <div class="vision-text">
-        <div class="vblock" data-img="0">
-          <div class="m-pic"><img src="../img/tower.webp" alt="" loading="lazy"></div>
-          <div class="prose measure">
-            <p>لم تكن فكرة إعداد مشروع إنشاء مركز النعيم الثقافي والتراثي بالنسبة لي مجرد فكرة لإنشاء موقع يحتضن التراث، أو محاولة لجمع صور قديمة ووثائق ومقتنيات ترتبط بتاريخ المنطقة، وإنما جاءت نتيجة قناعة راسخة بأن وراء كل حي من أحياء البحرين تاريخاً إنسانياً عميقاً، ووراء كل أسرة وبيت ومهنة وشخصية حكاية تستحق أن تعرف، وتوثق، وتقرأ في سياقها الأوسع ضمن تاريخ المجتمع البحريني.</p>
-            <p>ومن هذا المنطلق، فإنني أنظر إلى النعيم بوصفها مساحة تاريخية واجتماعية وثقافية تتجاوز حدودها الجغرافية؛ فهي جزء من ذاكرة المنامة، ومكوّن من مكونات التجربة البحرينية التي تشكلت عبر أجيال من العمل والبحر والتجارة والحرف والعلم والثقافة والفنون والتكافل الاجتماعي. وما يدفعني إلى إعداد هذا المشروع هو الإحساس بأن هذه الذاكرة، على الرغم من غناها واتساعها، لا تزال بحاجة إلى رؤية تجمع عناصرها المتفرقة، وتمنحها إطاراً يتيح اكتشاف قيمتها وإبراز حضورها للأجيال القادمة.</p>
-          </div>
+        <div class="prose measure">
+          <p>لم تكن فكرة إعداد مشروع إنشاء مركز النعيم الثقافي والتراثي مجرد فكرة لإنشاء موقع يحتضن التراث، وإنما جاءت نتيجة قناعة راسخة بأن وراء كل حي من أحياء البحرين تاريخاً إنسانياً عميقاً، ووراء كل أسرة وبيت ومهنة وشخصية حكاية تستحق أن تعرف وتوثق.</p>
+          <p>فالنعيم جزء من ذاكرة المنامة، ومكوّن من مكونات التجربة البحرينية التي تشكلت عبر أجيال من العمل والبحر والتجارة والحرف والعلم والثقافة والفنون والتكافل الاجتماعي.</p>
         </div>
-
-        <div class="vblock" data-img="1">
-          <div class="m-pic"><img src="../img/fort.webp" alt="" loading="lazy"></div>
-          <h3 class="h-m">مشروع لا تختزله الجدران</h3>
-          <div class="prose measure">
-            <p>إنني لا أرى أن تاريخ النعيم يمكن اختزاله في صفحات دراسة، أو في قاعات مركز توثيق، أو في صرح تراثي مهما اتسعت مساحته وتنوعت مقتنياته. فالمبنى، مهما بلغت قيمته، لا يمثل سوى وسيلة لاحتضان قصة أكبر منه؛ قصة مجتمع تشكلت ملامحه من حياة الناس وتجاربهم، ومن أعمالهم وتضحياتهم وإبداعاتهم، ومن تفاصيل يومية قد تبدو بسيطة في ظاهرها، لكنها تحمل في عمقها دلالات تاريخية واجتماعية وثقافية لا تقدر بثمن.</p>
-            <p>ولهذا، فإن الهدف من إعداد هذا المشروع لا يتمثل في تقديم صورة مكتملة ونهائية عن النعيم، وكأن تاريخها قد انتهى وأصبح محفوظاً في سجل واحد، وإنما في فتح مسار مستمر لاكتشاف ما نملكه من إرث، وما فقدناه منه، وما لا يزال محفوظاً في ذاكرة أهلها، وما يمكن استعادته من خلال البحث والتوثيق والشهادات والصور والوثائق والمقتنيات والروايات الشفوية.</p>
-            <p>إنها محاولة للانتقال من التعامل مع التراث باعتباره ماضياً ينبغي حفظه، إلى التعامل معه باعتباره مصدر معرفة وهوية وإلهام، ووسيلة لفهم الحاضر وبناء المستقبل.</p>
-          </div>
+        <div class="questions">
+          <div class="q0">لا نكتفي بالسؤال: ماذا سنضع داخل المركز؟ بل نبدأ بأسئلة أعمق:</div>
+          <ul>
+            <li>ماذا نملك؟</li>
+            <li>وماذا بقي من ذاكرتنا؟</li>
+            <li>وماذا نحتاج إلى توثيقه؟</li>
+            <li>وما الذي يمكن أن نعيد اكتشافه؟</li>
+            <li>ومن يستطيع أن يساهم في صياغة هذه الذاكرة؟</li>
+          </ul>
         </div>
-
-        <div class="vblock" data-img="2">
-          <div class="m-pic"><img src="../img/rope.webp" alt="" loading="lazy"></div>
-          <h3 class="h-m">لماذا أعددت المشروع بهذه الرؤية؟</h3>
-          <div class="prose measure">
-            <p>إن الدافع الحقيقي وراء إعداد هذا المشروع يرتبط برغبتي في أن نعيد النظر إلى النعيم من زاوية أوسع من حدودها السكنية والعمرانية، وأن نبحث عن موقعها الطبيعي في الذاكرة التاريخية للمنامة والبحرين.</p>
-            <p>فقد يكون لدينا تراث غني، وشخصيات تركت أثرها في المجتمع، ومهن وحرف ارتبطت بحياة الناس، وبيوت ومجالس ومساجد وأسواق وطرقات شهدت مراحل من التحول الاجتماعي، لكن قيمة هذه العناصر لا تكتمل بمجرد وجودها منفردة؛ بل تتجلى عندما نربط بينها، ونفهم سياقاتها، ونكشف علاقاتها، ونقدمها في صورة تجعل الإنسان قادراً على قراءة تاريخ المكان من خلال حياة أهله.</p>
-            <p>ومن هنا جاءت رغبتي في إعداد مشروع لا يكتفي بالسؤال:</p>
-          </div>
-          <div class="questions">
-            <div class="q0">ماذا سنضع داخل المركز؟ وإنما يبدأ بأسئلة أكثر عمقاً:</div>
-            <ul>
-              <li>ماذا نملك؟</li>
-              <li>وماذا بقي من ذاكرتنا؟</li>
-              <li>وماذا نحتاج إلى توثيقه؟</li>
-              <li>وما الذي يمكن أن نعيد اكتشافه؟</li>
-              <li>ومن هم الأشخاص والخبراء وأصحاب التجارب الذين يستطيعون أن يساهموا في صياغة هذه الذاكرة؟</li>
-            </ul>
-          </div>
-          <p class="measure" style="margin-top:1.3rem">إن هذه الأسئلة تمثل في نظري نقطة البداية الحقيقية لأي مشروع ثقافي وتراثي يريد أن يكون صادقاً مع تاريخه، وواعياً بمسؤوليته تجاه مستقبله.</p>
-        </div>
-
-        <div class="vblock" data-img="3">
-          <div class="m-pic"><img src="../img/hull.webp" alt="" loading="lazy"></div>
-          <h3 class="h-m">من توثيق الماضي إلى بناء الحضور الثقافي</h3>
-          <div class="prose measure">
-            <p>لا أريد لهذا المشروع أن يتوقف عند استعادة صور الماضي أو سرد أسماء الشخصيات، على الرغم من أهمية ذلك وضرورته، وإنما أتطلع إلى أن يتحول إلى منظومة ثقافية متكاملة، تتفاعل فيها الذاكرة مع البحث، والتراث مع التعليم، والتوثيق مع الفنون، والتاريخ مع الحاضر.</p>
-            <p>فالمركز الذي أتصوره ينبغي أن يكون قادراً على استضافة الباحثين وأصحاب الاختصاص، وتشجيع أبناء المنطقة على تقديم ما لديهم من وثائق وروايات ومقتنيات، وإتاحة المجال أمام الأجيال الجديدة للتعرف إلى تاريخ مجتمعها والمشاركة في توثيقه وإعادة تقديمه بوسائل معاصرة.</p>
-            <p>كما أرى أن التراث لا ينبغي أن يبقى محصوراً داخل القاعات، بل يمكن أن يمتد إلى الفعاليات الثقافية والتعليمية، والمعارض المؤقتة، والبرامج المجتمعية، والمشروعات الفنية، والبحث في الذاكرة العمرانية والشفوية، بما يتيح للمركز أن يكون مساحة للتفاعل والحوار، وليس مجرد مكان للعرض.</p>
-          </div>
-        </div>
-
-        <div class="vblock" data-img="4">
-          <div class="m-pic"><img src="../img/harbor.webp" alt="" loading="lazy"></div>
-          <h3 class="h-m">النعيم… من الذاكرة المحلية إلى الأفق الوطني</h3>
-          <div class="prose measure">
-            <p>إن طموحي لهذا المشروع لا يقف عند حدود توثيق تاريخ النعيم لأبنائها، وإن كان ذلك هدفاً أصيلاً لا يمكن التنازل عنه، بل يتطلع إلى أن تصبح النعيم نموذجاً في كيفية اكتشاف الذاكرة المحلية وتحويلها إلى قيمة ثقافية ومعرفية تخدم المجتمع البحريني بأسره.</p>
-            <p>وأرى أن موقع النعيم وصلتها التاريخية بالمنامة يتيحان التفكير في دور أوسع للمشروع؛ دور يجعل منها نافذة يتعرف من خلالها الزائر والباحث والجيل الجديد على جانب من تاريخ البحرين وتطور مجتمعها، وعلى ما أسهمت به المنطقة وأبناؤها في الحياة الاقتصادية والاجتماعية والثقافية.</p>
-            <p>ومن هنا، فإن عبارة «النعيم… بوابة المنامة إلى الذاكرة والتراث» لا أطرحها باعتبارها وصفاً لموقع جغرافي فقط، وإنما باعتبارها رؤية لما يمكن أن تصبح عليه المنطقة من خلال مشروع ثقافي يربط تاريخها بمحيطها، ويعزز حضورها في المشهد الثقافي والتراثي والسياحي لمملكة البحرين.</p>
-            <p>إن طموحي أن تسهم النعيم في تقديم نموذج يليق بتاريخها، وأن تتحول، عبر مشروع مدروس وشراكات فاعلة ومشاركة مجتمعية واسعة، إلى إحدى العلامات الثقافية والتراثية البارزة في البحرين؛ أيقونة تستمد قيمتها من أصالة تاريخها، وثراء ذاكرتها، وقدرتها على التجدد والتواصل مع الأجيال.</p>
-          </div>
-        </div>
-
-        <div class="vblock" data-img="5">
-          <div class="m-pic"><img src="../img/houses.webp" alt="" loading="lazy"></div>
-          <h3 class="h-m">مشروع يؤسس للمستقبل ولا يكتفي باستعادة الماضي</h3>
-          <div class="prose measure">
-            <p>أدرك أن حجم هذا المشروع واتساع موضوعاته وتعدد مجالاته يفوق قدرة فرد أو مجموعة محدودة على الإحاطة به، ولذلك فإنني لا أقدمه بوصفه عملاً مكتملاً أو رؤية مغلقة، وإنما أطرحه باعتباره دعوة إلى التشارك في التفكير والتوثيق والبناء.</p>
-            <p>إن ما أطمح إليه هو أن تتضافر جهود مركز تمكين شباب النعيم، وأبناء المنطقة، والباحثين والمؤرخين والمختصين وأصحاب الخبرات، وكل من يمتلك معرفة أو وثيقة أو رواية أو تجربة يمكن أن تضيف إلى هذا العمل، حتى تتشكل رؤية أكثر شمولاً وعمقاً، تستند إلى المعرفة الموثوقة، وتحترم تنوع الذاكرة، وتمنح كل مجال من مجالات التراث ما يستحقه من دراسة وعناية.</p>
-            <p>ولا أريد أن نبدأ بتحديد شكل المبنى قبل أن نفهم حجم القصة التي نريد أن يحتضنها، ولا أن نضع حدوداً لمحتوى المركز قبل أن نكتشف ما يمكن أن تقدمه ذاكرة النعيم. فالمكان ينبغي أن ينشأ استجابة للحاجة الثقافية والتوثيقية، وأن يتطور مع تطور المعرفة والمحتوى والشراكات والبرامج.</p>
-          </div>
-        </div>
-
-        <div class="vblock" data-img="6">
-          <div class="m-pic"><img src="../img/prow.webp" alt="" loading="lazy"></div>
-          <h3 class="h-m">كلمة أخيرة من المعد</h3>
-          <div class="prose measure">
-            <p>إن هذا المشروع يمثل بالنسبة لي مسؤولية فكرية واجتماعية تجاه المكان الذي أنتمي إليه، وتجاه الذاكرة التي حملها أبناء النعيم عبر الأجيال، وتجاه المستقبل الذي يستحق أن يتعرف إلى جذوره بصورة واعية وموثقة.</p>
-            <p>وإذا كان من الممكن أن نؤسس مركزاً ثقافياً وتراثياً، فإن طموحي يتجاوز تأسيس المكان إلى بناء الوعي بقيمة الذاكرة، وتحويل التراث إلى طاقة معرفية وثقافية متجددة، وجعل النعيم حاضرة في المشهد الوطني بوصفها جزءاً أصيلاً من تاريخ البحرين والمنامة.</p>
-            <p>إنني أؤمن بأن نجاح هذا المشروع لا يقاس بمساحة المبنى، ولا بعدد المقتنيات التي يمكن جمعها، ولا بحجم الفعاليات التي يمكن تنظيمها وحدها، وإنما بقدرته على أن يجعل الناس يرون تاريخهم بصورة أعمق، وأن يشعر أبناء النعيم بأن ذاكرتهم محل تقدير ومسؤولية، وأن يجد الجيل الجديد في تراثه مصدراً للمعرفة والانتماء والإبداع.</p>
-            <p>ومن هنا، فإنني أضع هذه الدراسة بين أيدي مؤسسات ومراكز وجمعيات النعيم، وأبناء المنطقة، وكل من يمكن أن يساهم في هذا المسار، أملاً في أن تتحول الفكرة إلى مشروع مؤسسي متكامل، وأن تكون النعيم نموذجاً حياً في صون الذاكرة المحلية، وإبراز قيمتها الوطنية، وفتح آفاقها نحو المستقبل.</p>
-            <p class="signoff">النعيم ليست مجرد مكان نروي تاريخه، وإنما ذاكرة نعيد اكتشافها، وهوية نصونها، ومستقبل ثقافي نشارك في بنائه.</p>
-            <p>وتفضلوا بقبول فائق الاحترام والتقدير،،،</p>
-          </div>
-        </div>
+        <p class="signoff">النعيم ليست مجرد مكان نروي تاريخه، وإنما ذاكرة نعيد اكتشافها، وهوية نصونها، ومستقبل ثقافي نشارك في بنائه.</p>
       </div>
-
-      <figure class="vfig" id="vfig" aria-hidden="true">
-        <div class="arch">
-          <img src="../img/tower.webp" alt="" class="on" data-cap="البراجيل والنخيل؛ ملامح العمارة البحرينية التقليدية">
-          <img src="../img/fort.webp" alt="" loading="lazy" data-cap="القلعة والسفينة الشراعية على الساحل">
-          <img src="../img/rope.webp" alt="" loading="lazy" data-cap="حبال المرسى على رصيف الميناء">
-          <img src="../img/hull.webp" alt="" loading="lazy" data-cap="بدن السفينة الخشبية؛ إرث القلافين">
-          <img src="../img/harbor.webp" alt="" loading="lazy" data-cap="البحر والسفينة والرصيف">
-          <img src="../img/houses.webp" alt="" loading="lazy" data-cap="البيوت القديمة على الساحل">
-          <img src="../img/prow.webp" alt="" loading="lazy" data-cap="مقدمة السفينة والقلعة في الأفق">
-        </div>
-        <figcaption id="vcap">البراجيل والنخيل؛ ملامح العمارة البحرينية التقليدية · لوحة تعبيرية</figcaption>
-      </figure>
+      <figure class="vfig vfig-one" aria-hidden="true"><div class="arch"><img src="../img/tower.webp" alt="" class="on"></div><figcaption>البراجيل والنخيل · لوحة تعبيرية</figcaption></figure>
     </div>
   </div>
 </section>
@@ -639,16 +637,7 @@ footer .fby{margin-top:2.6rem;padding-top:1.4rem;border-top:1px solid var(--line
         <div>
           <div class="step-head"><h3 class="h-l">تشكيل فريق إدارة المشروع</h3><span>المدة: شهر</span></div>
           <p class="step-lead">فريق عمل واضح الهيكل وخطة زمنية أولية لإدارة المشروع.</p>
-          <div class="step-body">
-            <ul class="ticks">
-              <li>تشكيل فريق عمل للمشروع تحت مظلة إحدى المؤسسات ذات العلاقة في النعيم</li>
-              <li>تحديد منسق عام للمشروع</li>
-              <li>توزيع العمل على مجموعات أو محاور تخصصية</li>
-              <li>إعداد جدول زمني لمراحل المشروع</li>
-              <li>تحديد آلية للتوثيق وحفظ نتائج الاجتماعات والمقابلات</li>
-              <li>إنشاء قاعدة بيانات بأسماء الشخصيات والكفاءات والمؤسسات ذات العلاقة بالمشروع</li>
-            </ul>
-          </div>
+          
         </div>
       </article>
 
@@ -656,16 +645,8 @@ footer .fby{margin-top:2.6rem;padding-top:1.4rem;border-top:1px solid var(--line
         <div class="step-mark">2</div>
         <div>
           <div class="step-head"><h3 class="h-l">رسم خريطة المجتمع والمهتمين والمعنيين</h3><span>المدة: شهر</span></div>
-          <p class="step-lead">قاعدة بيانات مجتمعية شاملة للكفاءات وأصحاب الخبرة والمهتمين بالمشروع، في سبع دوائر:</p>
-          <div class="step-body groups">
-            <div><h4>أهل التراث والذاكرة الشعبية</h4><p>كبار السن · الرواة والمهتمون بالتاريخ الشفهي · العائلات التي تمتلك صوراً ووثائق ومقتنيات تاريخية · الباحثون والمؤرخون</p></div>
-            <div><h4>التراث البحري</h4><p>القلاليف وصناع السفن · البحارة وأصحاب الخبرة البحرية · المهتمون بتاريخ الساحل والغوص وصيد الأسماك · ملاك المقتنيات البحرية القديمة</p></div>
-            <div><h4>الفنون البصرية</h4><p>المصورون الفوتوغرافيون · الفنانون التشكيليون · الرسامون · المصممون · المهتمون بالأرشفة البصرية</p></div>
-            <div><h4>العمارة والهوية العمرانية</h4><p>المهندسون المعماريون · المصممون · المهتمون بالعمارة البحرينية التقليدية · المختصون في التصميم الداخلي والتراث العمراني</p></div>
-            <div><h4>الثقافة والأدب</h4><p>الكتاب والأدباء · الشعراء · الباحثون · المهتمون بالمكتبات والتوثيق</p></div>
-            <div><h4>الحرف والمهن التقليدية</h4><p>الحرفيون · أصحاب الصناعات التقليدية · المهتمون بإحياء المهن القديمة</p></div>
-            <div><h4>الشباب والمجتمع</h4><p>الشباب · طلبة المدارس والجامعات · المؤسسات الأهلية · الفرق التطوعية · المهتمون بالأنشطة الثقافية</p></div>
-          </div>
+          <p class="step-lead">قاعدة بيانات لسبع دوائر: أهل الذاكرة، البحر، الفنون البصرية، العمارة، الأدب، الحرف، والشباب.</p>
+          
         </div>
       </article>
 
@@ -673,18 +654,8 @@ footer .fby{margin-top:2.6rem;padding-top:1.4rem;border-top:1px solid var(--line
         <div class="step-mark">3</div>
         <div>
           <div class="step-head"><h3 class="h-l">برنامج اللقاءات التشاورية</h3><span>المدة: 2–3 أشهر</span></div>
-          <p class="step-lead">الاستماع المباشر إلى أصحاب الاختصاص والخبرة، وعدم الاكتفاء بالتصور النظري للمشروع. سلسلة لقاءات متخصصة، يُخصَّص كل لقاء منها لمحور معين:</p>
-          <div class="step-body">
-            <table class="meetings">
-              <tr><th>اللقاء الأول</th><td><b>النعيم والذاكرة التاريخية</b>يشارك فيه كبار السن والباحثون والمؤرخون وأصحاب الروايات الشعبية.</td></tr>
-              <tr><th>اللقاء الثاني</th><td><b>التراث البحري والقلافة وصناعة السفن</b>يشارك فيه القلاليف والبحارة والمهتمون بتاريخ البحر.</td></tr>
-              <tr><th>اللقاء الثالث</th><td><b>التصوير الفوتوغرافي والأرشيف البصري</b>يشارك فيه المصورون وأصحاب الصور التاريخية.</td></tr>
-              <tr><th>اللقاء الرابع</th><td><b>الفنون التشكيلية والرسم</b>يشارك فيه الفنانون والرسامون والنقاد والمهتمون بالفنون.</td></tr>
-              <tr><th>اللقاء الخامس</th><td><b>العمارة والهوية العمرانية</b>يشارك فيه المهندسون والمختصون بالتراث العمراني.</td></tr>
-              <tr><th>اللقاء السادس</th><td><b>الحرف التقليدية والاقتصاد الإبداعي</b>يشارك فيه الحرفيون وأصحاب المشاريع.</td></tr>
-              <tr><th>اللقاء السابع</th><td><b>الشباب ومستقبل المركز</b>يشارك فيه شباب المنطقة والمهتمون بالأنشطة الثقافية.</td></tr>
-            </table>
-          </div>
+          <p class="step-lead">سبعة لقاءات متخصصة، لكل محور لقاء مع أصحاب الخبرة فيه. تجدها مربوطة بأقسامها في مخطط المعرض.</p>
+          
         </div>
       </article>
 
@@ -692,19 +663,8 @@ footer .fby{margin-top:2.6rem;padding-top:1.4rem;border-top:1px solid var(--line
         <div class="step-mark">4</div>
         <div>
           <div class="step-head"><h3 class="h-l">دراسة احتياجات كل قسم</h3><span>المدة: شهران</span></div>
-          <p class="step-lead">بعد انتهاء اللقاءات التشاورية تتشكل مجموعات عمل لدراسة احتياجات كل قسم بصورة مستقلة، وفق بطاقة عمل موحدة تشمل:</p>
-          <div class="step-body card-fields">
-            <div><b>تعريف القسم</b><p>ما هو دوره ورسالة وجوده داخل المركز؟</p></div>
-            <div><b>المحتوى</b><p>ما الذي سيعرض أو يقدم للجمهور؟</p></div>
-            <div><b>المقتنيات المطلوبة</b><p>ما هي الأدوات والصور والوثائق والنماذج المطلوبة؟</p></div>
-            <div><b>المساحة</b><p>ما حجم المساحة المناسبة وطبيعة تصميمها؟</p></div>
-            <div><b>التجهيزات</b><p>ما الاحتياجات الفنية والتقنية؟</p></div>
-            <div><b>البرامج والفعاليات</b><p>ما الأنشطة التي يمكن تنفيذها بصورة مستمرة؟</p></div>
-            <div><b>الموارد البشرية</b><p>من هم المختصون أو المتطوعون المطلوبون لإدارة القسم؟</p></div>
-            <div><b>الشراكات</b><p>ما الجهات والمؤسسات والأفراد الذين يمكن التعاون معهم؟</p></div>
-            <div><b>الاستدامة</b><p>كيف يمكن للقسم أن يستمر ويتطور مستقبلاً؟</p></div>
-            <div><b>الأولويات</b><p>ما الذي يجب تنفيذه في المرحلة الأولى، وما الذي يمكن تأجيله؟</p></div>
-          </div>
+          <p class="step-lead">بطاقة عمل موحدة لكل قسم: المحتوى، المقتنيات، المساحة، التجهيزات، البرامج، الموارد البشرية، الشراكات، الاستدامة، والأولويات.</p>
+          
         </div>
       </article>
 
@@ -712,17 +672,8 @@ footer .fby{margin-top:2.6rem;padding-top:1.4rem;border-top:1px solid var(--line
         <div class="step-mark">5</div>
         <div>
           <div class="step-head"><h3 class="h-l">إعداد استراتيجية الأقسام والفعاليات</h3><span>المدة: شهر</span></div>
-          <p class="step-lead">بعد جمع نتائج اللقاءات ودراسات الاحتياجات، تُعَدّ استراتيجية متكاملة للمركز تتضمن الأقسام المقترحة:</p>
-          <div class="step-body wings">
-            <div class="wing"><small>القسم 1</small><h4>تاريخ النعيم والذاكرة الشعبية</h4><p>الروايات الشفوية · الوثائق التاريخية · صور النعيم القديمة · الشخصيات والرواد</p></div>
-            <div class="wing"><small>القسم 2</small><h4>التراث البحري والقلافة</h4><p>نماذج السفن · أدوات صناعة السفن · تاريخ القلاليف · تاريخ ساحل النعيم</p></div>
-            <div class="wing"><small>القسم 3</small><h4>معرض التصوير الفوتوغرافي</h4><p>الصور التاريخية · التصوير المعاصر · أرشيف النعيم البصري · المعارض الموسمية</p></div>
-            <div class="wing"><small>القسم 4</small><h4>الفنون التشكيلية</h4><p>معرض دائم · معارض مؤقتة · ورش فنية · دعم الفنانين الشباب</p></div>
-            <div class="wing"><small>القسم 5</small><h4>العمارة والهوية</h4><p>العمارة التقليدية · تطور عمران النعيم · نماذج وتصاميم معمارية</p></div>
-            <div class="wing"><small>القسم 6</small><h4>الحرف التقليدية</h4><p>ورش حية · عرض المنتجات · تدريب الشباب</p></div>
-            <div class="wing"><small>القسم 7</small><h4>المكتبة ومركز الدراسات</h4><p>تاريخ النعيم · تاريخ البحرين · التراث البحري · الدراسات والبحوث</p></div>
-            <div class="wing"><small>القسم 8</small><h4>المسرح والساحة الثقافية</h4><p>الندوات · المحاضرات · الأمسيات · الفعاليات التراثية · المهرجانات والأسواق الشعبية</p></div>
-          </div>
+          <p class="step-lead">ثمانية أقسام مقترحة، تراها على مخطط المعرض أدناه.</p>
+          
         </div>
       </article>
 
@@ -730,13 +681,8 @@ footer .fby{margin-top:2.6rem;padding-top:1.4rem;border-top:1px solid var(--line
         <div class="step-mark">6</div>
         <div>
           <div class="step-head"><h3 class="h-l">إعداد الوثيقة الاستراتيجية للمشروع</h3><span>المدة: شهر</span></div>
-          <p class="step-lead">بعد الانتهاء من المشاورات والدراسات تُجمَع المخرجات في وثيقة استراتيجية موحدة:</p>
-          <div class="step-body">
-            <div class="doc-title">الوثيقة التأسيسية · مركز النعيم الثقافي والتراثي</div>
-            <ol class="docitems">
-              <li>رؤية المركز</li><li>رسالته</li><li>أهدافه</li><li>هويته الثقافية</li><li>الأقسام المقترحة</li><li>احتياجات كل قسم</li><li>البرامج والفعاليات</li><li>الفئات المستهدفة</li><li>الشراكات المحتملة</li><li>الاحتياجات المكانية</li><li>التصور المالي الأولي</li><li>مراحل التنفيذ</li><li>مؤشرات النجاح والاستدامة</li>
-            </ol>
-          </div>
+          <p class="step-lead">وثيقة تأسيسية من 13 بنداً: الرؤية والرسالة والأهداف والهوية والأقسام والبرامج والشراكات والتصور المالي ومؤشرات النجاح.</p>
+          
         </div>
       </article>
 
@@ -744,11 +690,8 @@ footer .fby{margin-top:2.6rem;padding-top:1.4rem;border-top:1px solid var(--line
         <div class="step-mark">7</div>
         <div>
           <div class="step-head"><h3 class="h-l">إعداد التصور المكاني والهندسي</h3><span>المدة: حسب الموقع</span></div>
-          <p class="step-lead">يجب أن يكون التصميم الهندسي نتيجة لاحتياجات المشروع وليس سابقاً عليها، بحيث يُحدَّد:</p>
-          <div class="step-body">
-            <div class="chips"><span>مساحة كل قسم</span><span>العلاقة بين الأقسام</span><span>مسارات الزوار</span><span>مناطق المعارض</span><span>الساحات المفتوحة</span><span>الورش</span><span>المخازن</span><span>الإدارة</span><span>المكتبة</span><span>المسرح</span><span>المرافق والخدمات</span></div>
-            <p class="note">ويُفضَّل إعداد أكثر من تصور بحسب مساحة الموقع المتاح.</p>
-          </div>
+          <p class="step-lead">التصميم الهندسي يأتي نتيجة لاحتياجات المشروع لا سابقاً عليها، ويُفضَّل إعداد أكثر من تصور بحسب الموقع.</p>
+          
         </div>
       </article>
 
@@ -779,19 +722,89 @@ footer .fby{margin-top:2.6rem;padding-top:1.4rem;border-top:1px solid var(--line
       </article>
     </div>
 
-    <div class="gantt-box">
-      <h3 class="h-l">الجدول التنفيذي المقترح</h3>
-      <p class="note" style="margin-top:.4rem">تصور زمني تقريبي بالأشهر، استناداً إلى المدد المقترحة في الدراسة.</p>
-      <div class="gantt-scroll" tabindex="0" aria-label="مخطط زمني لمراحل المشروع">
-        <div class="gantt" id="gantt"></div>
       </div>
-      <div class="legend">
-        <span><i></i>مدة محددة</span>
-        <span><i class="ext"></i>مدة قابلة للتمديد</span>
-        <span><i class="site"></i>حسب الموقع</span>
-        <span><i class="par"></i>بالتوازي مع الدراسة</span>
+</section>
+
+<!-- ================= EXHIBITION PLAN ================= -->
+<section class="chap planner" id="plan" aria-label="أماكن المعرض">
+  <div class="wrap">
+    <div class="plan-head">
+      <div>
+        <div class="chap-no">أماكن المعرض</div>
+        <h2 class="h-xl reveal-h">خارطة المركز</h2>
+        <p class="lede">ثمانية أقسام حول ساحة مفتوحة. اضغط على أي قسم لترى محتواه ولقاءه التشاوري ومن يرتبط به من المدعوين، أو ابدأ جولة الزائر.</p>
+      </div>
+      <div class="plan-ctrl">
+        <button type="button" class="pbtn primary" id="tourBtn">ابدأ جولة الزائر</button>
+        <button type="button" class="pbtn" id="resetBtn">عرض الخارطة كاملة</button>
       </div>
     </div>
+
+    <div class="plan-grid">
+      <div class="plan-map">
+        <svg id="planSvg" viewBox="0 0 1000 680" role="img" aria-label="مخطط توضيحي لأقسام المركز حول الساحة">
+          <defs>
+            <pattern id="waves" width="40" height="16" patternUnits="userSpaceOnUse"><path d="M0 8 Q10 2 20 8 T40 8" fill="none" stroke="#7FA3C2" stroke-opacity=".55" stroke-width="1.4"/></pattern>
+            <pattern id="tiles" width="22" height="22" patternUnits="userSpaceOnUse"><rect width="22" height="22" fill="#E8D6B2"/><path d="M0 0 L22 22 M22 0 L0 22" stroke="#D2B98C" stroke-width=".6"/></pattern>
+          </defs>
+          <!-- sea -->
+          <rect x="880" y="0" width="120" height="680" fill="#1C3154"/>
+          <rect x="880" y="0" width="120" height="680" fill="url(#waves)"/>
+          <text x="940" y="44" class="sea-t">الساحل</text>
+          <g class="sea-boat" transform="translate(915 560)"><path d="M0 22 L50 22 L44 32 Q25 36 6 32 Z" fill="#9A3C1F"/><path d="M25 0 L25 22" stroke="#F4EAD6" stroke-width="2"/><path d="M26 2 Q42 10 46 21 L26 21 Z" fill="#F4EAD6"/></g>
+          <!-- plot + building shell -->
+          <rect x="40" y="40" width="820" height="600" rx="6" fill="#D9C39A"/>
+          <rect x="70" y="70" width="780" height="540" rx="4" fill="#C9AE80" stroke="#2B1910" stroke-width="3"/>
+          <!-- rooms -->
+          <g class="room" data-id="7" tabindex="0" role="button"><rect x="80" y="80" width="230" height="170" rx="3"/><circle class="num" cx="110" cy="110" r="17"/><text class="nt" x="110" y="116">7</text><text class="rt" x="195" y="172">المكتبة ومركز</text><text class="rt" x="195" y="200">الدراسات</text></g>
+          <g class="room" data-id="4" tabindex="0" role="button"><rect x="320" y="80" width="250" height="170" rx="3"/><circle class="num" cx="350" cy="110" r="17"/><text class="nt" x="350" y="116">4</text><text class="rt" x="445" y="172">الفنون</text><text class="rt" x="445" y="200">التشكيلية</text></g>
+          <g class="room" data-id="3" tabindex="0" role="button"><rect x="580" y="80" width="260" height="170" rx="3"/><circle class="num" cx="610" cy="110" r="17"/><text class="nt" x="610" y="116">3</text><text class="rt" x="710" y="172">معرض التصوير</text><text class="rt" x="710" y="200">الفوتوغرافي</text></g>
+          <g class="room" data-id="5" tabindex="0" role="button"><rect x="80" y="260" width="230" height="170" rx="3"/><circle class="num" cx="110" cy="290" r="17"/><text class="nt" x="110" y="296">5</text><text class="rt" x="195" y="352">العمارة</text><text class="rt" x="195" y="380">والهوية</text></g>
+          <g class="room" data-id="1" tabindex="0" role="button"><rect x="580" y="260" width="260" height="170" rx="3"/><circle class="num" cx="610" cy="290" r="17"/><text class="nt" x="610" y="296">1</text><text class="rt" x="710" y="352">تاريخ النعيم</text><text class="rt" x="710" y="380">والذاكرة الشعبية</text></g>
+          <g class="room" data-id="6" tabindex="0" role="button"><rect x="80" y="440" width="230" height="160" rx="3"/><circle class="num" cx="110" cy="470" r="17"/><text class="nt" x="110" y="476">6</text><text class="rt" x="195" y="527">الحرف</text><text class="rt" x="195" y="555">التقليدية</text></g>
+          <g class="room" data-id="2" tabindex="0" role="button"><rect x="580" y="440" width="260" height="160" rx="3"/><circle class="num" cx="610" cy="470" r="17"/><text class="nt" x="610" y="476">2</text><text class="rt" x="710" y="527">التراث البحري</text><text class="rt" x="710" y="555">والقلافة</text></g>
+          <g class="room court" data-id="8" tabindex="0" role="button"><rect x="320" y="260" width="250" height="250" rx="3" fill="url(#tiles)"/>
+            <path d="M370 480 A75 75 0 0 1 520 480" class="seats-arc"/><path d="M390 480 A55 55 0 0 1 500 480" class="seats-arc"/><path d="M410 480 A35 35 0 0 1 480 480" class="seats-arc"/>
+            <g class="palm" transform="translate(530 300)"><circle r="16" fill="#6E7F45"/><circle r="9" cx="-10" cy="-8" fill="#86985A"/><circle r="9" cx="10" cy="-6" fill="#86985A"/><circle r="3" fill="#5A3A22"/></g>
+            <circle class="num" cx="350" cy="290" r="17"/><text class="nt" x="350" y="296">8</text><text class="rt" x="445" y="362">المسرح والساحة</text><text class="rt" x="445" y="390">الثقافية</text></g>
+          <!-- entrance -->
+          <g class="entry"><rect x="320" y="520" width="250" height="80" rx="3"/><text class="et" x="445" y="555">المدخل والاستقبال</text><text class="es" x="445" y="580">والإدارة</text></g>
+          <path d="M405 612 L405 590 A40 40 0 0 1 485 590 L485 612" class="gate-arch"/>
+          <!-- wind towers -->
+          <g class="barjeel"><rect x="822" y="76" width="22" height="22"/><path d="M822 76 L844 98 M844 76 L822 98"/></g>
+          <g class="barjeel"><rect x="76" y="76" width="22" height="22"/><path d="M76 76 L98 98 M98 76 L76 98"/></g>
+          <!-- visitor path -->
+          <path id="tourPath" class="tour-path" d="M445 640 L445 560 L710 560 L710 520 L710 345 L710 165 L445 165 L195 165 L195 345 L195 520 L300 520 L300 440 L445 400"/>
+          <!-- walker -->
+          <g id="walker" class="walker" transform="translate(445 640)"><circle r="13" class="w-halo"/><circle r="7" class="w-dot"/></g>
+          <!-- compass -->
+          <text x="60" y="665" class="legend-t">تصوّر توضيحي · ليس مخططاً هندسياً</text>
+        </svg>
+      </div>
+
+      <aside class="plan-panel" id="planPanel" aria-live="polite">
+        <div class="pp-empty" id="ppEmpty">
+          <div class="pp-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21V9a8 8 0 0 1 16 0v12"/><path d="M9 21v-6h6v6"/></svg></div>
+          <h3 class="h-m">اختر قسماً من الخارطة</h3>
+          <p>كل قسم مربوط بلقائه التشاوري، ومن يرتبط به من الشخصيات المدعوة حسب أدوارهم المقترحة في الدراسة.</p>
+        </div>
+        <div class="pp-body" id="ppBody" hidden>
+          <div class="pp-no" id="ppNo"></div>
+          <h3 class="pp-title" id="ppTitle"></h3>
+          <p class="pp-desc" id="ppDesc"></p>
+          <h4>ماذا يضم</h4>
+          <div class="pp-chips" id="ppItems"></div>
+          <h4>اللقاء التشاوري</h4>
+          <p class="pp-meet" id="ppMeet"></p>
+          <h4>من المدعوين ذوي الصلة</h4>
+          <ul class="pp-people" id="ppPeople"></ul>
+          <div class="pp-nav"><button type="button" class="pbtn" id="ppPrev">القسم السابق</button><button type="button" class="pbtn" id="ppNext">القسم التالي</button></div>
+        </div>
+      </aside>
+    </div>
+
+    <div class="room-chips" id="roomChips" aria-label="الأقسام"></div>
+    <p class="plan-note">المخطط تصوّر توضيحي لترتيب الأقسام فقط. المساحات والمواقع الفعلية تُحدَّد في المرحلة السابعة بعد دراسة احتياجات كل قسم، كما تنص الدراسة.</p>
   </div>
 </section>
 
@@ -864,40 +877,6 @@ footer .fby{margin-top:2.6rem;padding-top:1.4rem;border-top:1px solid var(--line
       </div>
     </article></div>
 
-    <div class="together">
-      <div>
-        <h3 class="h-l">القيمة المشتركة لاجتماع هذه الشخصيات</h3>
-        <p class="lede" style="margin-bottom:1.4rem">قيمة تتجاوز مجموع الأسماء نفسها؛ لأنه يجمع في مكان واحد:</p>
-        <p class="realms">المؤسسة<span>·</span>العمل الأهلي<span>·</span>التراث<span>·</span>التاريخ<span>·</span>البحث<span>·</span>السياحة<span>·</span>الإعلام<span>·</span>القانون<span>·</span>الفن<span>·</span>الحرف<span>·</span>الاقتصاد<span>·</span>الشباب<span>·</span>الذاكرة المحلية</p>
-        <p style="margin-top:1.4rem;color:var(--on-dark-soft)">وهذا التنوع هو ما يحتاج إليه المشروع في مرحلته التأسيسية؛ فكل شخصية تستطيع أن تضيف جزءاً من الصورة، بينما يؤدي الحوار المشترك إلى تكوين الصورة الكاملة.</p>
-      </div>
-      <div>
-        <h3 class="h-m" style="margin-bottom:1rem">مسارات عملية يفتحها هذا الحضور</h3>
-        <ol class="paths">
-          <li>الوصول إلى أصحاب المقتنيات والصور والوثائق والروايات القديمة</li>
-          <li>التعرف على الخبرات المتخصصة التي يمكن أن تشارك في اللجان وفرق العمل</li>
-          <li>فتح قنوات التواصل مع الجهات الرسمية والمؤسسات الثقافية والسياحية</li>
-          <li>بناء شراكات مع القطاع الأهلي والخاص</li>
-          <li>استقطاب الفنانين والحرفيين والباحثين والشباب</li>
-          <li>تحديد البرامج التي يمكن أن يبدأ بها المركز قبل إنشاء مقره الدائم</li>
-          <li>وضع تصور واقعي للهوية والمحتوى والاحتياجات</li>
-          <li>تحويل المشروع من فكرة إلى شبكة من أصحاب العلاقة القادرين على المساهمة في تنفيذه</li>
-        </ol>
-      </div>
-    </div>
-
-    <div class="together">
-      <div>
-        <h3 class="h-l">حضورهم رسالة بحد ذاته</h3>
-      </div>
-      <div class="prose" style="color:var(--on-dark-soft)">
-        <p>أهمية اللقاء لا تكمن فقط في ما سيقال خلال الاجتماع، وإنما في من سيجلس حول الطاولة. فحين يجتمع رئيس مركز تمكين شباب النعيم مع رئيس جمعية النعيم الخيرية، وأصحاب الخبرة الحكومية والقانونية والاقتصادية، والباحثين والكتاب، وأهل البحر والتراث، والفنانين والخزافين، والإعلاميين، والمهتمين بالسياحة، والشخصيات المرتبطة بالذاكرة المحلية؛ فإن ذلك يعطي المشروع منذ لحظته الأولى صورة مختلفة.</p>
-        <p style="color:var(--foam);font-family:var(--f-kufi);font-size:1.15em;line-height:1.75">إنها صورة تقول إن مركز النعيم الثقافي والتراثي ليس مشروع فئة واحدة، ولا مشروع مبنى، ولا مشروعاً يخص الماضي وحده؛ وإنما هو مشروع يجمع ذاكرة النعيم بخبرة البحرين، ويصل الماضي بالحاضر، ويهيئ للشباب مساحة لصناعة المستقبل.</p>
-        <p>ومن هنا فإن كل اسم مدعو إلى اللقاء جزء من منظومة التأسيس، لا مجرد ضيف على الاجتماع؛ فبعضهم قد يضيف المعرفة، وبعضهم العلاقات، وبعضهم التوثيق، وبعضهم الرؤية الفنية، وبعضهم الخبرة القانونية أو الاقتصادية، وبعضهم الذاكرة الشعبية، وبعضهم القدرة على الوصول إلى جهات وأشخاص ومصادر قد لا يصل إليها المشروع بوسائل أخرى.</p>
-        <p>وبذلك يصبح اللقاء الأول نفسه خطوة تنفيذية للمشروع، لأنه لا يكتفي بعرض الفكرة، وإنما يبدأ بتكوين النواة البشرية والمعرفية والمؤسسية التي ستعمل على بلورة المركز وتحديد مهامه ومكوناته واحتياجاته ومساره التنفيذي.</p>
-      </div>
-    </div>
-
     <div class="fromto">
       <h3 class="h-l">وهنا تبدأ المرحلة الحقيقية من التأسيس</h3>
       <div class="ft-rows">
@@ -907,12 +886,7 @@ footer .fby{margin-top:2.6rem;padding-top:1.4rem;border-top:1px solid var(--line
       </div>
     </div>
 
-    <div class="final-goal">
-      <h3 class="h-l" style="color:var(--saffron)">والهدف النهائي</h3>
-      <p style="margin-top:.8rem">أن نخرج من هذا اللقاء ليس بمجرد اتفاق على أهمية إنشاء المركز، وإنما بقناعة مشتركة بأن:</p>
-      <blockquote>لكل حاضر دوراً يمكن أن يؤديه، ولكل خبرة قيمة يمكن أن تضيفها، ولكل علاقة باب يمكن أن تفتحه، ولكل ذاكرة مادة تستحق أن تحفظ، ولكل فكرة فرصة لأن تتحول إلى جزء من مشروع ثقافي وتراثي مستدام.</blockquote>
-    </div>
-  </div>
+      </div>
 </section>
 
 <!-- ================= CH4 GATEWAY ================= -->
@@ -931,16 +905,8 @@ footer .fby{margin-top:2.6rem;padding-top:1.4rem;border-top:1px solid var(--line
         <div class="arch-s"><img src="../img/tower.webp" alt="" loading="lazy"></div>
       </aside>
       <div class="prose measure">
-        <p class="drop">ليست النعيم مجرد حي من أحياء المنامة، ولا محطة عابرة في مسيرة التوسع العمراني للمدينة، بل هي مساحة من الذاكرة البحرينية التي تشكلت فيها ملامح مجتمع عرف البحر والعمل والتجارة والحرف والتعليم والثقافة والفنون والتكافل الاجتماعي، وترك أبناؤه عبر الأجيال بصمات واضحة في مسيرة المجتمع البحريني.</p>
-        <p>وقد اكتسبت النعيم، بحكم موقعها وامتدادها وعلاقتها بالمنامة، دوراً يتجاوز حدود المكان الجغرافي؛ فكانت في مراحل مختلفة بوابة للمنامة، يمر عبرها الناس، وتتصل من خلالها الحركة التجارية والاجتماعية، وتلتقي فيها مسارات أهل البحر وأصحاب الحرف والتجار والمهنيين والمثقفين وأبناء المجتمع. ومن هذا التداخل نشأت بيئة غنية بالتجارب الإنسانية، صنعت مع الزمن هوية خاصة للمنطقة، وأصبحت جزءاً من قصة المنامة وتاريخ البحرين.</p>
-        <p>وفي ذاكرة النعيم تفاصيل كثيرة لا تزال حاضرة في وجدان أهلها؛ في أسماء الرجال والنساء الذين أسهموا في بناء المجتمع، وفي القلاليف والبحارة وأهل البحر، وأصحاب المهن والحرف، والتجار وأهل العلم والثقافة والفن والرياضة والعمل الاجتماعي، وفي البيوت القديمة والمساجد والمجالس والأسواق والطرقات، وفي الصور والوثائق والمقتنيات والروايات الشفوية التي تحمل بين تفاصيلها حكايات أجيال متعاقبة.</p>
-        <p>إن قيمة هذا التراث لا تكمن في كونه جزءاً من الماضي فحسب، وإنما في قدرته على تفسير الحاضر وإلهام المستقبل. فكل صورة قديمة، وكل وثيقة، وكل أداة عمل، وكل حكاية يرويها أحد أبناء النعيم، وكل اسم ارتبط بمهنة أو علم أو خدمة مجتمعية، يمثل جزءاً من نسيج أكبر يستحق أن يجمع ويوثق ويقرأ ويقدم للأجيال بصورة تحفظ أصالته وتمنحه حياة جديدة.</p>
-        <p>ومن هنا جاءت فكرة إنشاء مركز النعيم الثقافي والتراثي؛ ليكون مشروعاً يتجاوز مفهوم المتحف التقليدي أو المكان الذي تحفظ فيه المقتنيات، وليتحول إلى ذاكرة حية للنعيم، ومجالاً مفتوحاً للتوثيق والبحث والتعليم والعرض والفنون والفعاليات الثقافية، ومنصة تجمع الماضي بالحاضر، وتمنح أبناء المنطقة والأجيال الجديدة فرصة التعرف إلى جذورهم والمشاركة في صياغة مستقبلهم الثقافي.</p>
-        <p>ولا ينطلق المشروع من افتراض أن محتوى المركز قد اكتمل، بل من إيمان بأن هذا المحتوى موجود في أماكن متعددة: في ذاكرة كبار السن، وفي البيوت، وفي الأرشيفات الخاصة، وفي الصور القديمة، وفي الوثائق والمقتنيات، وفي قصص العائلات، وفي ذاكرة أصحاب المهن والحرف، وفي تجارب الشخصيات التي صنعت حضور النعيم في مختلف المجالات.</p>
-        <p>لذلك فإن المرحلة الأولى من المشروع تقوم على اكتشاف ما نملك، وتوثيقه، وفهم قيمته، ثم تحديد ما نحتاج إليه، وما يمكن أن نقترحه، ومن يمكن أن يساهم معنا في تحويل هذه الثروة المتناثرة إلى مشروع ثقافي متكامل.</p>
-        <p>ومن هذا المنظور، فإن المركز المقترح لا يمثل مشروعاً عمرانياً فحسب، وإنما يمثل مشروعاً للهوية والذاكرة والتنمية الثقافية. ويمكن أن يصبح، بحكم موقع النعيم وصلتها التاريخية بالمنامة، نقطة جذب للمهتمين بتاريخ البحرين وتراثها، ونافذة يتعرف من خلالها الزائر على جانب من حياة المجتمع البحريني وتطوره، بما يعزز حضور النعيم بوصفها بوابة للمنامة في السياحة والتراث والتجارة والثقافة.</p>
-        <p>إننا لا نريد أن نبني مبنى ثم نبحث له عن محتوى، وإنما نريد أن نكتشف أولاً القصة التي تستحق أن تروى، والذاكرة التي تستحق أن تحفظ، والهوية التي تستحق أن تقدم، ثم نبني المكان القادر على احتضانها وعرضها وإيصالها إلى الأجيال.</p>
-        <p>ومن هنا، يأتي هذا المشروع دعوة إلى أبناء النعيم، وإلى المختصين والباحثين والمؤرخين وأصحاب الخبرة، وإلى كل من يحمل صورة أو وثيقة أو رواية أو معرفة أو تجربة، للمشاركة في بناء هذه الذاكرة بصورة جماعية؛ لأن تاريخ النعيم ليس ملكاً لجيل واحد، وإنما أمانة تتناقلها الأجيال.</p>
+        <p class="drop">ليست النعيم مجرد حي من أحياء المنامة، بل مساحة من الذاكرة البحرينية؛ كانت في مراحل مختلفة بوابة للمنامة، يمر عبرها الناس، وتلتقي فيها مسارات أهل البحر وأصحاب الحرف والتجار والمثقفين.</p>
+        <p>ومن هنا جاءت فكرة المركز: ذاكرة حية للنعيم، ومجال مفتوح للتوثيق والبحث والتعليم والعرض والفنون، يتجاوز مفهوم المتحف التقليدي.</p>
       </div>
     </div>
   </div>
@@ -961,20 +927,12 @@ footer .fby{margin-top:2.6rem;padding-top:1.4rem;border-top:1px solid var(--line
       <h2 class="h-xl">ذاكرة الآباء أمانة…<span>وتراث الأجداد رسالة إلى المستقبل</span></h2>
     </div>
     <div class="closing-body prose">
-      <p>في ختام هذا المقترح، لا أجد أجمل من أن أترك هذه الفكرة مفتوحة على آفاق المشاركة والعمل، مؤمناً بأن المشاريع التي تبنى من أجل الذاكرة والهوية لا تكتمل بجهد فرد، ولا تحقق غاياتها بمجرد إعداد دراسة، وإنما تنمو حين تجد من يؤمن بقيمتها، ويمنحها من وقته وخبرته وفكره وإمكاناته ما تستحقه.</p>
-      <p>إن ما بين أيدينا ليس مجرد مشروع لإنشاء مركز ثقافي وتراثي، بل دعوة إلى إعادة النظر فيما تركه الآباء والأجداد من إرث إنساني واجتماعي وثقافي، وإلى اكتشاف ما لا يزال حاضراً في ذاكرتنا، وما يستحق أن ينقذ من النسيان، وأن يقدم للأجيال بصورة تحفظ أصالته وتكشف معانيه.</p>
-      <p>ولعل أجمل ما يمكن أن نقدمه لمن سبقونا ليس الاكتفاء بذكر أسمائهم أو استعادة صورهم، وإنما أن نعمل على فهم حياتهم، وتوثيق تجاربهم، وإبراز ما قدموه لمجتمعهم، وإيصال قصصهم إلى أبنائنا وأحفادنا، حتى تبقى آثارهم حاضرة في الوعي، لا غائبة خلف تعاقب السنين.</p>
-      <p>ومن هنا، فإنني أتوجه بهذا المشروع إلى مركز تمكين شباب النعيم، وإلى مؤسسات ومراكز وجمعيات المنطقة، وإلى الباحثين والمختصين وأصحاب الخبرات، وإلى كل فرد يحمل في ذاكرته صورة أو وثيقة أو رواية أو معرفة، داعياً الجميع إلى التفاعل مع هذه الفكرة، ومراجعتها، وإثرائها، والإسهام في تطويرها، كلٌّ بما يستطيع.</p>
-      <p class="lift">فربما تكون معلومة يحتفظ بها أحد كبار السن مفتاحاً لاكتشاف جانب من تاريخ المنطقة، وربما تكون صورة قديمة شاهداً على مرحلة لا تزال بحاجة إلى التوثيق، وربما تكون حرفة أو مهنة أو تجربة شخصية حلقة مفقودة في قصة أكبر تستحق أن تروى.</p>
-      <p>إننا أمام فرصة لا ينبغي أن نتعامل معها باعتبارها عملاً مؤجلاً إلى زمن آخر؛ فبعض ما نريد توثيقه يعيش اليوم في ذاكرة أشخاص تقدم بهم العمر، وبعض المقتنيات والوثائق قد تضيع إن لم نبادر إلى جمعها وحفظها، وبعض القصص قد تنطفئ برحيل أصحابها. ولذلك، فإن المبادرة إلى العمل اليوم ليست ترفاً ثقافياً، بل مسؤولية تجاه الذاكرة وأصحابها والأجيال القادمة.</p>
-      <p>وأملي أن يجد هذا المقترح من يقرأه بعين الشريك، لا بعين المتلقي فحسب؛ وأن يتحول الاطلاع عليه إلى حوار، والحوار إلى تعاون، والتعاون إلى خطوات عملية تضع الأسس لمشروع يستحق أن ينمو ويتطور ويأخذ مكانه بين المشاريع الثقافية والتراثية في مملكة البحرين.</p>
-      <p>إن إحياء تراث الآباء والأجداد لا يعني أن نعيش في الماضي، وإنما أن نحمل قيمته إلى المستقبل، وأن نمنح أبناءنا فرصة لمعرفة الجذور التي نمت منها حياتهم، والقصص التي صنعت جانباً من هويتهم.</p>
-      <p>وإذا كان هذا المشروع قد بدأ بفكرة، فإن اكتماله الحقيقي لن يكون إلا بجهود المخلصين الذين يرون في تاريخ النعيم جزءاً من تاريخ البحرين، وفي حفظ ذاكرتها مسؤولية مشتركة، وفي إحياء تراثها عملاً يستحق العناية والتقدير.</p>
-      <p>فلنجعل من هذه الدراسة بداية لقاء، ومن هذا المقترح مساحة للتعاون، ومن ذاكرة النعيم مشروعاً حياً تتعاقب عليه الأجيال، وتضيف إليه، وتحافظ عليه، وتعيد تقديمه بما يليق بأصالته وثرائه.</p>
-      <p class="lift">فالتراث الذي نحييه اليوم هو الرسالة التي نتركها لأبنائنا غداً، والذاكرة التي نحفظها هي الأثر الذي يبقى شاهداً على من صنعوا تاريخنا.</p>
+      <p class="lift">ربما تكون معلومة يحتفظ بها أحد كبار السن مفتاحاً لاكتشاف جانب من تاريخ المنطقة، وربما تكون حرفة أو تجربة شخصية حلقة مفقودة في قصة أكبر تستحق أن تروى.</p>
+      <p>بعض ما نريد توثيقه يعيش اليوم في ذاكرة أشخاص تقدم بهم العمر، وبعض المقتنيات قد تضيع إن لم نبادر إلى جمعها. فالمبادرة اليوم مسؤولية تجاه الذاكرة والأجيال القادمة.</p>
+      <p class="lift">فالتراث الذي نحييه اليوم هو الرسالة التي نتركها لأبنائنا غداً.</p>
     </div>
     <div class="author"><small>المعد</small><b>عمار أحمد النشابة</b></div>
-    <div class="strip"><img src="../img/prow.webp" alt="لوحة تعبيرية: مقدمة السفينة والقلعة في الأفق" loading="lazy"></div>
+    
   </div>
 </section>
 
@@ -993,6 +951,7 @@ footer .fby{margin-top:2.6rem;padding-top:1.4rem;border-top:1px solid var(--line
   </div>
   <div class="wrap">
 
+    <details class="letter-box"><summary>اقرأ نص الدعوة كاملاً</summary>
     <article class="letter" id="letter">
       <div class="bism">بسم الله الرحمن الرحيم</div>
       <div class="lt">دعوة لحضور المؤتمر التأسيسي<span>لمشروع مركز النعيم الثقافي والتراثي</span></div>
@@ -1066,6 +1025,7 @@ footer .fby{margin-top:2.6rem;padding-top:1.4rem;border-top:1px solid var(--line
         <div>المكان:<span class="fill"></span></div>
       </div>
     </article>
+    </details>
     <div class="copy-row">
       <button class="btn" id="copyBtn" type="button">نسخ نص الدعوة</button>
       <span id="copyMsg" role="status"></span>
@@ -1115,7 +1075,7 @@ footer .fby{margin-top:2.6rem;padding-top:1.4rem;border-top:1px solid var(--line
     h+=`<div class="lab" style="grid-row:${row};grid-column:1"><em>${r[0]}</em>${r[1]}</div>`;
     h+=`<div class="bar-g ${r[4]}" style="grid-row:${row};grid-column:${r[2]+1}/${r[3]+2}" title="${r[5]}">${(r[3]-r[2])>=1?r[5]:''}</div>`;
   });
-  g.innerHTML=h;
+  if(g) g.innerHTML=h;
 
   /* ---------- majlis ---------- */
   const P=DATA.people, C=DATA.cats;
@@ -1193,6 +1153,65 @@ footer .fby{margin-top:2.6rem;padding-top:1.4rem;border-top:1px solid var(--line
   $('#tGo').addEventListener('click',()=>go($('#person')));
   select(0,false); peekTable(-1);
 
+  /* ---------- exhibition plan (interactive map) ---------- */
+  const SECS={
+    1:{t:'قسم تاريخ النعيم والذاكرة الشعبية',d:'ذاكرة المكان وأهله: ما يرويه كبار السن، وما تحفظه البيوت من وثائق وصور، وسِيَر الرواد.',items:['الروايات الشفوية','الوثائق التاريخية','صور النعيم القديمة','الشخصيات والرواد'],meet:'اللقاء الأول · النعيم والذاكرة التاريخية',people:['سعيد إبراهيم القلاف','علي سلطان السلاطنة','سامي نوح «أبو أحمد»','صادق أحمد رحمة']},
+    2:{t:'قسم التراث البحري والقلافة',d:'البحر الذي صنع النعيم: صناعة السفن ولغة القلافين وتاريخ الساحل والغوص.',items:['نماذج السفن','أدوات صناعة السفن','تاريخ القلاليف','تاريخ ساحل النعيم'],meet:'اللقاء الثاني · التراث البحري والقلافة وصناعة السفن',people:['د. يوسف أحمد بن ماجد النشابة','جمال صالح دهنيم']},
+    3:{t:'معرض التصوير الفوتوغرافي',d:'أرشيف بصري للنعيم بين الأمس واليوم، يجمع صور الأهالي إلى جانب التصوير المعاصر.',items:['الصور التاريخية','التصوير المعاصر','أرشيف النعيم البصري','المعارض الموسمية'],meet:'اللقاء الثالث · التصوير الفوتوغرافي والأرشيف البصري',people:[]},
+    4:{t:'قسم الفنون التشكيلية',d:'الفن طريقة لتقديم التراث، لا عنصراً تجميلياً: معرض دائم ومعارض متجددة وورش.',items:['معرض دائم','معارض مؤقتة','ورش فنية','دعم الفنانين الشباب'],meet:'اللقاء الرابع · الفنون التشكيلية والرسم',people:['عباس الموسوي','محمود عبدالصاحب البقلاوة']},
+    5:{t:'قسم العمارة والهوية',d:'كيف تشكّل عمران النعيم، وما تحمله العمارة البحرينية التقليدية من هوية.',items:['العمارة التقليدية','تطور عمران النعيم','نماذج وتصاميم معمارية'],meet:'اللقاء الخامس · العمارة والهوية العمرانية',people:['م. رضا محمد الأدرج','م. محمد عبدالصمد النشابة']},
+    6:{t:'قسم الحرف التقليدية',d:'الحرفة مهارة حية تُعلَّم وتُنتَج وتُسوَّق، لا مادة للعرض فقط.',items:['ورش حية','عرض المنتجات','تدريب الشباب'],meet:'اللقاء السادس · الحرف التقليدية والاقتصاد الإبداعي',people:['محسن التيتون','زينب الزاير']},
+    7:{t:'المكتبة ومركز الدراسات',d:'مركز ينتج المعرفة حول التراث: مكتبة متخصصة ومنهجية للتوثيق والبحث.',items:['تاريخ النعيم','تاريخ البحرين','التراث البحري','الدراسات والبحوث'],meet:'لا يوجد لقاء مخصص في الدراسة؛ يُغذّيه البحث والتوثيق من كل الأقسام.',people:['د. غنية عليوي','سعيد إبراهيم القلاف']},
+    8:{t:'المسرح والساحة الثقافية',d:'قلب المركز المفتوح: ساحة تجمع الأجيال في الندوات والأمسيات والأسواق الشعبية.',items:['الندوات','المحاضرات','الأمسيات','الفعاليات التراثية','المهرجانات والأسواق الشعبية'],meet:'اللقاء السابع · الشباب ومستقبل المركز',people:['حنان حماد','زينب الزاير']}
+  };
+  const TOUR=[2,1,3,4,7,5,6,8];
+  const svg=$('#planSvg'), rooms=[...document.querySelectorAll('.room')], chipsBox=$('#roomChips');
+  const VB0=[0,0,1000,680]; let vb=VB0.slice(), curSec=0, touring=false, tourTimer=null;
+  [1,2,3,4,5,6,7,8].forEach(n=>{const b=document.createElement('button');b.type='button';b.dataset.id=n;b.setAttribute('aria-pressed','false');b.innerHTML=`<b>${n}</b>${SECS[n].t.replace('قسم ','')}`;b.addEventListener('click',()=>{stopTour();openSec(n,true);});chipsBox.appendChild(b);});
+  function setVB(v){svg.setAttribute('viewBox',v.map(x=>x.toFixed(1)).join(' '));}
+  function zoomTo(target){
+    if(hasGsap&&!reduce){const o={a:vb[0],b:vb[1],c:vb[2],d:vb[3]};gsap.to(o,{a:target[0],b:target[1],c:target[2],d:target[3],duration:1.1,ease:'expo.inOut',onUpdate:()=>{vb=[o.a,o.b,o.c,o.d];setVB(vb);}});}
+    else{vb=target.slice();setVB(vb);}
+  }
+  function roomBox(n){const r=document.querySelector(`.room[data-id="${n}"] rect`);const x=+r.getAttribute('x'),y=+r.getAttribute('y'),w=+r.getAttribute('width'),h=+r.getAttribute('height');
+    const pad=110, W=w+pad*2, H=W*680/1000; const HH=Math.max(H,h+pad*1.4), WW=HH*1000/680; return [x+w/2-WW/2,y+h/2-HH/2,WW,HH];}
+  function openSec(n,zoom){
+    curSec=n; const S=SECS[n];
+    rooms.forEach(r=>{r.classList.toggle('sel',+r.dataset.id===n);r.classList.toggle('dim',+r.dataset.id!==n);});
+    [...chipsBox.children].forEach(b=>b.setAttribute('aria-pressed',String(+b.dataset.id===n)));
+    $('#ppEmpty').hidden=true; $('#ppBody').hidden=false;
+    $('#ppNo').textContent=`القسم ${n} من 8`; $('#ppTitle').textContent=S.t; $('#ppDesc').textContent=S.d;
+    $('#ppItems').innerHTML=S.items.map(x=>`<span>${x}</span>`).join('');
+    $('#ppMeet').textContent=S.meet;
+    $('#ppPeople').innerHTML=S.people.length?S.people.map(p=>{const nm=p.replace(/^(د\.|م\.)\s*/,'');return `<li><b>${nm.charAt(0)}</b>${p}</li>`;}).join(''):'<li class="none">لم تحدد الدراسة اسماً بعينه لهذا القسم؛ تفتح دائرة المصورين وأصحاب الأرشيفات.</li>';
+    if(hasGsap&&!reduce) gsap.fromTo('#ppBody > *',{y:12,opacity:.2},{y:0,opacity:1,stagger:.04,duration:.6,ease:'expo.out',overwrite:true});
+    if(zoom) zoomTo(roomBox(n));
+    moveWalker(n);
+  }
+  function resetPlan(){stopTour();curSec=0;rooms.forEach(r=>r.classList.remove('sel','dim'));[...chipsBox.children].forEach(b=>b.setAttribute('aria-pressed','false'));$('#ppEmpty').hidden=false;$('#ppBody').hidden=true;zoomTo(VB0);}
+  rooms.forEach(r=>{const n=+r.dataset.id;r.setAttribute('aria-label',SECS[n].t);
+    r.addEventListener('click',()=>{stopTour();openSec(n,true);});
+    r.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();stopTour();openSec(n,true);}});});
+  $('#resetBtn').addEventListener('click',resetPlan);
+  $('#ppNext').addEventListener('click',()=>{stopTour();const i=TOUR.indexOf(curSec);openSec(TOUR[(i+1)%8],true);});
+  $('#ppPrev').addEventListener('click',()=>{stopTour();const i=TOUR.indexOf(curSec);openSec(TOUR[(i+7)%8],true);});
+  // walker along the visitor path
+  const tp=$('#tourPath'), walker=$('#walker'), TL=tp.getTotalLength();
+  const stopAt={}; (function(){const centers={2:[710,520],1:[710,345],3:[710,165],4:[445,165],7:[195,165],5:[195,345],6:[195,520],8:[445,400]};
+    Object.entries(centers).forEach(([k,[cx,cy]])=>{let best=0,bd=1e9;for(let l=0;l<=TL;l+=4){const p=tp.getPointAtLength(l),d=(p.x-cx)**2+(p.y-cy)**2;if(d<bd){bd=d;best=l;}}stopAt[k]=best;});})();
+  let wl={v:0};
+  function placeWalker(){const p=tp.getPointAtLength(wl.v);walker.setAttribute('transform',`translate(${p.x} ${p.y})`);}
+  function moveWalker(n){const to=stopAt[n];if(hasGsap&&!reduce)gsap.to(wl,{v:to,duration:Math.min(2.2,.6+Math.abs(to-wl.v)/600),ease:'power2.inOut',onUpdate:placeWalker});else{wl.v=to;placeWalker();}}
+  function stopTour(){touring=false;clearTimeout(tourTimer);$('#tourBtn').setAttribute('aria-pressed','false');$('#tourBtn').textContent='ابدأ جولة الزائر';}
+  $('#tourBtn').addEventListener('click',()=>{
+    if(touring){stopTour();return;}
+    touring=true;$('#tourBtn').setAttribute('aria-pressed','true');$('#tourBtn').textContent='إيقاف الجولة';
+    let i=curSec?Math.max(0,TOUR.indexOf(curSec)):0; if(!curSec){wl.v=0;placeWalker();}
+    const step=()=>{if(!touring)return;openSec(TOUR[i],true);i++;if(i<TOUR.length)tourTimer=setTimeout(step,4200);else tourTimer=setTimeout(()=>{stopTour();zoomTo(VB0);},4200);};
+    step();
+  });
+  if(hasGsap&&!reduce){ gsap.to('.tour-path',{strokeDashoffset:-120,duration:6,ease:'none',repeat:-1}); gsap.to('.sea-boat',{y:-4,duration:2,yoyo:true,repeat:-1,ease:'sine.inOut'}); gsap.to('.w-halo',{attr:{r:18},opacity:.2,duration:1.2,yoyo:true,repeat:-1,ease:'sine.inOut'}); }
+
   /* ---------- copy invitation ---------- */
   $('#copyBtn').addEventListener('click',()=>{
     const t=$('#letter').innerText.replace(/\n{3,}/g,'\n\n');
@@ -1220,7 +1239,7 @@ footer .fby{margin-top:2.6rem;padding-top:1.4rem;border-top:1px solid var(--line
 
   // vision sticky images
   const vimgs=[...document.querySelectorAll('#vfig img')], vcap=$('#vcap');
-  function showV(n){ vimgs.forEach((im,k)=>im.classList.toggle('on',k===n)); vcap.textContent=vimgs[n].dataset.cap+' · لوحة تعبيرية'; }
+  function showV(n){}
   if('IntersectionObserver' in window){
     const io=new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting) showV(+e.target.dataset.img); }),{rootMargin:'-45% 0px -45% 0px'});
     document.querySelectorAll('.vblock').forEach(b=>io.observe(b));
@@ -1309,8 +1328,6 @@ footer .fby{margin-top:2.6rem;padding-top:1.4rem;border-top:1px solid var(--line
   });
   // stairs rise
   if(innerWidth>900) gsap.fromTo('.stair',{scaleY:.55},{scaleY:1,duration:1.2,ease:'expo.out',stagger:.09,scrollTrigger:{trigger:'#stairs',start:'top 80%'}});
-  // gantt bars grow
-  gsap.fromTo('.gantt .bar-g',{scaleX:.08},{scaleX:1,duration:1.1,ease:'expo.out',stagger:.07,scrollTrigger:{trigger:'#gantt',start:'top 82%'}});
   // ===== 5 the principle lights up word by word
   (function(){const q=$('#creedQ');const out=[];q.childNodes.forEach(n=>{const hl=n.nodeType===1;(n.textContent).split(/\s+/).filter(Boolean).forEach(w=>out.push(`<span class="w${hl?' hl':''}">${w}</span>`));});q.innerHTML=out.join(' ');
     gsap.to('#creedQ .w',{opacity:1,stagger:.1,ease:'none',scrollTrigger:{trigger:'#creedQ',start:'top 82%',end:'bottom 45%',scrub:true}});})();
@@ -1334,7 +1351,6 @@ footer .fby{margin-top:2.6rem;padding-top:1.4rem;border-top:1px solid var(--line
     if(fine){lan.classList.add('on-lamp');lan.addEventListener('mousemove',e=>{const r=lan.getBoundingClientRect();gsap.to(lx,{x:e.clientX-r.left,y:e.clientY-r.top,duration:.6,ease:'power3',onUpdate:set});});}
     else{$('#lampHint').textContent='الضوء يتجوّل ليكشف اللوحة';gsap.to(lx,{keyframes:[{x:innerWidth*.25,y:innerHeight*.35},{x:innerWidth*.75,y:innerHeight*.45},{x:innerWidth*.5,y:innerHeight*.6}],duration:9,repeat:-1,yoyo:true,ease:'sine.inOut',onUpdate:set});}
     set();})();
-  gsap.fromTo('.strip img',{scale:1.15},{scale:1,ease:'none',scrollTrigger:{trigger:'.strip',start:'top bottom',end:'bottom top',scrub:true}});
 
   // ===== 8 the invitation: seal breaks, flap opens, letter rises
   const etl=gsap.timeline({scrollTrigger:{trigger:'#envStage',start:'top top',end:'+=150%',pin:true,scrub:1}});
